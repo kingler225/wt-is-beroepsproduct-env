@@ -35,6 +35,7 @@ $menu = [
         ];
 
 var_dump($menu);
+
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -45,6 +46,8 @@ var_dump($menu);
 <body>
     Hallo <?= $naam ?>.<br>
     Het is vandaag <?= $datum ?>.
-    Het duurt nog <?=$strAantalDagen ?> dagen tot Sinterklaas.
+    Het duurt nog <?=$strAantalDagen ?> dagen tot Sinterklaas.<br>
+    <?= print_r($menu[0]) ?>
+    <?= print_r($menu[1]) ?>
 </body>
 </html>
