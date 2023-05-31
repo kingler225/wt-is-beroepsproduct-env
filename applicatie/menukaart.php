@@ -19,6 +19,7 @@ $menu = [
     ]
         ];
 
+
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +30,15 @@ $menu = [
 </head>
 <body>
     <h1>
-        <?= print_r($menu[0]) ?>
+        <?=
+            foreach($menu as $menuitem){
+                echo <<<MENUITEM
+                <div>$name</div>
+                MENUITEM;
+            }
+            
+
+        ?>
     </h1>
     <h1>
         <?= echo $menu[1] ?>
