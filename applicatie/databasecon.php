@@ -14,5 +14,6 @@ try {
     // die('Sorry, probleem met de database');
 }
  
+$dbhandler->query("SELECT * FROM Passagier");
 echo 'Rest van de pagina';
 ?>
