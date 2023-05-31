@@ -23,4 +23,5 @@ function maakVerbinding() {
   return $verbinding;
 }
 
+echo 'rest van de pagina';
 ?>
