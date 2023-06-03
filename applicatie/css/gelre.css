@@ -1,0 +1,79 @@
+
+
+html, body{
+    height: 100%;
+    background-color: aquamarine;
+}
+.container{
+    display:flex; 
+    justify-content: flex-start;
+    flex-flow: column;
+}
+
+header{
+    height: 23%;
+    background-image: url(../images/banner.jpg);
+    background-size: 100%;
+}
+
+main{
+    height: 100%;
+    background-color: aliceblue;
+}
+
+
+/*navigatiebalk
+*/
+nav{
+    display: flex;
+    flex-flow: row;
+    background-color: aqua;
+}
+
+.navitem{
+    flex:5;
+}
+
+/*inlogvensters
+*/
+.inlog{
+    display:flex; 
+    justify-content: flex-start;
+    flex-flow: row;
+}
+
+
+/*Check-in vensters
+*/
+.incheck{
+    display:flex; 
+    justify-content: flex-start;
+    flex-flow: row;
+}
+
+.input{
+    flex:1;
+    border:100px;
+}
+
+.inputinfo{
+    display: flex;
+    border:100px;
+}
+
+.info{
+    flex-flow: column;
+
+}
+
+.flights{
+    display: flex;
+}
+
+.availableflights{
+    flex: 2;
+}
+
+table{
+
+}
