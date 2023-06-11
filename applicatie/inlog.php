@@ -1,3 +1,43 @@
+<?php
+require_once "./sessions/ses_start.php";
+require_once("./layout/login/login.php");
+
+
+if (!isset($_SESSION["role"])) $_SESSION["role"] = "unknown";
+
+
+$method = $_SERVER["REQUEST_METHOD"];
+
+echo $method;
+
+if ($method != "POST") {
+    echo $_SESSION["role"];
+    $title  = "login";
+    $content = generateLoginPanel(); 
+} else {
+    
+    $username = $_POST["username"];
+    $pwd = $_POST["password"];
+
+    if ($username == "john" && $pwd == "secret") {
+        $title = 'welcome administrator';
+        $content = "";
+        $_SESSION["role"] = "ADMIN";
+        header("Location: /index.php");
+        die();
+    } else {
+        $title = 'welcome guest';
+        $content = "";
+        $_SESSION["role"] = "GUEST";
+        header("Location: /index.php");
+        die(); 
+    }
+
+}
+
+
+?>
+<!-- 
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -74,4 +114,4 @@
     </main>
 </body>
 
-</html>
+</html> -->
