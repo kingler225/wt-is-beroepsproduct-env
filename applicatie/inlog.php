@@ -1,5 +1,6 @@
 <?php
-require_once "./sessions/ses_start.php";
+require_once("./database/db_connection.php");
+require_once("./sessions/ses_start.php");
 require_once("./layout/login/login.php");
 
 

@@ -15,4 +15,9 @@ try{
     die('Sorry database error');    
 }
 
+$results = $connection->query("SELECT * FROM Vlucht");
+foreach($results as $result){
+    print_r($result);
+}
+
 ?>
