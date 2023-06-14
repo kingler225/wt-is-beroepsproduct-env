@@ -1,17 +1,8 @@
 <?php
-require_once("./database/getflights.php");
+require_once './database/getflights.php';
 
-function maakVluchtenLijst(){
-  $vluchten = getFlights();
-  $lijst = "<table>";
-  foreach($vluchten as $vlucht =>$value){
-      $lijst .="<tr><td>$vlucht</td><td>$value</td></tr>";
-    }
-  $lijst .= "</table>";
-  return $lijst;
-  }
+$vluchtenlijst = maakVluchtenLijst();
 
-  $vluchtenlijst = maakVluchtenLijst();
 
 ?>
 <!DOCTYPE html>
@@ -78,7 +69,8 @@ function maakVluchtenLijst(){
 
       <div class="flights">
         <div class="availableflights">
-          <table>
+          <?=$vluchtenlijst?>
+          <!-- <table>
             <tr>
               <th>
                 Vluchten
@@ -121,7 +113,7 @@ function maakVluchtenLijst(){
               <td>
                 Lanzarote
               </td>
-            </tr>
+            </tr> -->
           </table>
 
         </div>

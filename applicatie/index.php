@@ -1,7 +1,12 @@
 <?php
-echo "hello world";
-?>
+require_once("tabellen.php");
+include_once("./layout/main.php");
 
+var_dump($_SERVER["PATH_INFO"]);
+$tables = generateTables();
+
+?>
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -11,14 +16,14 @@ echo "hello world";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css\gelre.css">
 
-    <title>Gelre CheckIn</title>
+    <title>$title</title>
 </head>
 
 <body>
     <header>
         <h1>
             <a href="index.php">
-                <p>Welkom bij Gelre Airport</p>
+                <p>Welkom bij <?=$title?></p>
             </a>
         </h1>
         <div class="title">
@@ -31,23 +36,25 @@ echo "hello world";
             <div class="navigatie">
                 <nav>
                     <div class="navitem">
-                        <a href="mijnvlucht.php">Mijn vlucht</a>
+                        <a href="mijnvlucht.php"><?=$mijnvlucht?></a>
                     </div>
                     <div class="navitem">
-                        <a href="vluchtinfo.php">Vluchtinformatie</a>
+                        <a href="vluchtinfo.php"><?=$vluchtinfo?></a>
                     </div>
                     <div class="navitem">
-                        <a href="inchecken.php">Inchecken</a>
+                        <a href="inchecken.php"><?=$incheck?></a>
                     </div>
                     <div class="navitem">
-                        <a href="inlog.php">Inloggen</a>
+                        <a href="inlog.php"><?=$inloggen?></a>
                     </div>
                     <div class="navitem">
-                        <a href="vluchten.php">Nieuwe vlucht</a>
+                        <a href="vluchten.php"><?=$nieuwevlucht?></a>
                       </div>
                 </nav>
             </div>
+            <?=$tables?>
         </div>
+        
     </main>
 </body>
 
