@@ -1,3 +1,19 @@
+<?php
+require_once("./database/getflights.php");
+
+function maakVluchtenLijst(){
+  $vluchten = getFlights();
+  $lijst = "<table>";
+  foreach($vluchten as $vlucht =>$value){
+      $lijst .="<tr><td>$vlucht</td><td>$value</td></tr>";
+    }
+  $lijst .= "</table>";
+  return $lijst;
+  }
+
+  $vluchtenlijst = maakVluchtenLijst();
+
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 
