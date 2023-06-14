@@ -12,7 +12,7 @@ function generateTables(){
     $lijst = "<table>";
     foreach($tabellen as $tabel){
         $tabelnaam = $tabel["TABLE_NAME"];
-        $lijst .="<tr><td><a href=$tabelnaam>" . implode("</td><td>", $tabel) . "</a></td></tr>";
+        $lijst .="<tr><td><a href=/show/$tabelnaam>" . implode("</td><td>", $tabel) . "</a></td></tr>";
       }
     $lijst .= "</table>";
     return $lijst;
@@ -21,7 +21,7 @@ function generateTables(){
     $tables = generateTables();
 ?>
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,4 +33,4 @@ function generateTables(){
     <?=$tables?>
     
 </body>
-</html> -->
+</html>

@@ -1,11 +1,30 @@
 <?php
 require_once("tabellen.php");
+require_once("./database/getflights.php");
 include_once("./layout/main.php");
 
-var_dump($_SERVER["PATH_INFO"]);
+$segments = explode("/", $_SERVER["PATH_INFO"]);
 $tables = generateTables();
+$command = $segments[1];
+$argument = $segments[2];
 
-?>
+echo $command;
+echo $argument;
+
+switch($command){
+    case "show":
+        // $content = generateTables();
+        switch($argument){
+            case "Vlucht":
+                $content = maakVluchtenLijst();
+                break;
+            default:
+            $content = "geen content";                
+            }
+        break;
+    default: 
+    $content = "geen content";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -14,7 +33,7 @@ $tables = generateTables();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css\gelre.css">
+    <link rel="stylesheet" href=".\css\gelre.css">
 
     <title>$title</title>
 </head>
@@ -22,7 +41,7 @@ $tables = generateTables();
 <body>
     <header>
         <h1>
-            <a href="index.php">
+            <a href="./index.php">
                 <p>Welkom bij <?=$title?></p>
             </a>
         </h1>
@@ -36,23 +55,23 @@ $tables = generateTables();
             <div class="navigatie">
                 <nav>
                     <div class="navitem">
-                        <a href="mijnvlucht.php"><?=$mijnvlucht?></a>
+                        <a href="./mijnvlucht.php"><?=$mijnvlucht?></a>
                     </div>
                     <div class="navitem">
-                        <a href="vluchtinfo.php"><?=$vluchtinfo?></a>
+                        <a href="./vluchtinfo.php"><?=$vluchtinfo?></a>
                     </div>
                     <div class="navitem">
-                        <a href="inchecken.php"><?=$incheck?></a>
+                        <a href="./inchecken.php"><?=$incheck?></a>
                     </div>
                     <div class="navitem">
-                        <a href="inlog.php"><?=$inloggen?></a>
+                        <a href="./inlog.php"><?=$inloggen?></a>
                     </div>
                     <div class="navitem">
-                        <a href="vluchten.php"><?=$nieuwevlucht?></a>
+                        <a href="./vluchten.php"><?=$nieuwevlucht?></a>
                       </div>
                 </nav>
             </div>
-            <?=$tables?>
+            <?=$content?>
         </div>
         
     </main>
